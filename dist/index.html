@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>LAB TEST</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=3.0, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__nav wrap">
+            <nav>
+                <a href="#">
+                    <span class="header__nav-name">STAR <span class="blue">Hotel</span></span>
+                    <img class="header__nav-logo" src="images/logo.png">
+                </a>
+                <a href="#" class="active">Главная</a>
+                <a href="#">О нас</a>
+                <a href="#">Номера</a>
+                <a href="#">Услуги</a>
+                <a href="#">3D-тур</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Ресторан</a>
+                <a href="#">Сауна</a>
+                <a href="#">Контакты</a>
+                <a href="javascript:void(0);" style="font-size:15px;" class="lines"><!--&#9776;--></a>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
+        <div class="content-description">
+            <span>Поздравляем, вы бронируете номер напрямую</span>
+            <br/>
+            и получите лучшие условия!
+        </div>
+        <div class="content__selectors">
+            <div class="wrap fd-r ">
+
+                <div class="fd-r pr ai-c">
+                    <div class="content__selectors-date rb-none fd-r">
+                        <i class="icon check-in"></i>
+                        <div class="content__selectors-cell">
+                            <input type="text" class="datepicker check-in" data-selenium="checkInBox" readonly data-date="2017-12-23">
+                            <span id="checkInWeekday">суббота</span>
+                        </div>
+                        <div class="content__selectors-cell small fd-r check-in">
+                            <span class="big ">17</span>
+                            <div class="fd-c">
+                                <span class="month small">дек</span>
+                                <span class="day small">пт</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content__selectors-date separate"><span></span> ночей</div>
+
+                    <div class="content__selectors-date lb-none fd-r">
+                        <i class="icon check-out"></i>
+                        <div class="content__selectors-cell">
+                            <input type="text" class="datepicker check-out" data-selenium="checkOutBox" readonly data-date="2017-12-23">
+                            <span id="checkOutWeekday"></span>
+                        </div>
+
+                        <div class="content__selectors-cell small fd-r check-out">
+                            <span class="big">17</span>
+                            <div class="fd-c">
+                                <span class="month small">дек</span>
+                                <span class="day small">пт</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Если запускаете с эмулятора и ресайзите страницу до 320px,то её нужнл будет обновить для корректного отображения datepicker'а на мобильных устройствах-->
+                    <div class="content__datepicker inactive">
+
+                    </div>
+                </div>
+
+                <div class="content__selectors-persons">
+                    <i class="icon person"></i>
+                    <!--<div class="content__selectors-cell">-->
+                        <input type="text" readonly value="2 взрослых, 0 детей, 1 номер">
+                        <div class="сell-results">
+                            <span class="cell-results room">1 номер, </span>
+                            <span class="cell-results adults">2 взрослых, </span>
+                            <span class="cell-results kids">0 детей</span>
+                        </div>
+                    <!--</div>-->
+                    <div class="content__persons_frame">
+                        <ul>
+                            <li class="fd-r">
+                                <span class="counter-name">Номеров</span>
+                                <div class="counter-fields" data-targ="room">
+                                    <div class="counter-field remove inactive"></div>
+                                    <div class="counter-field_num">1</div>
+                                    <div class="counter-field add"></div>
+                                </div>
+                            </li>
+                            <li class="fd-r">
+                                <span class="counter-name">Взрослых</span>
+                                <div class="counter-fields" data-targ="adults">
+                                    <div class="counter-field remove"></div>
+                                    <div class="counter-field_num">2</div>
+                                    <div class="counter-field add"></div>
+                                </div>
+                            </li>
+                            <li class="fd-r">
+                                <span class="counter-name">Детей</span>
+                                <div class="counter-fields" data-targ="kids">
+                                    <div class="counter-field remove inactive"></div>
+                                    <div class="counter-field_num">0</div>
+                                    <div class="counter-field add"></div>
+                                </div>
+                            </li>
+                            <li class="kids_age inactive">
+                                <span class="counter-name kids">Возраст ребёнка</span>
+                                <div class="kids_age-list">
+                                   <!-- <div class="kids_age-list-item">
+                                        <select class="counter-field_num kids">
+                                            <option value="0"><1</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                        </select>
+                                    </div>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button type="submit" class="content__selectors-button">
+                    <span>Найти номера<br/>по лучшей цене</span>
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/jquery.datepicker.extension.range.min.js"></script>
+<script src="js/jQuery.ui.datepicker-ru.js"></script>
+<script src="js/main.js"></script>
+</html>
