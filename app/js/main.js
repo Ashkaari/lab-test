@@ -71,7 +71,7 @@ $( document ).ready(function() {
     function handleResize() {
         if($( window ).width() > 1000 && triggerMobileVersion) {
             triggerMobileVersion = false;
-            console.log('reinicializing to big');
+            console.log('reinitializing to big');
             $content_datepicker.removeClass('hasDatepicker').empty();
 
             $content_datepicker.datepicker({
@@ -84,7 +84,7 @@ $( document ).ready(function() {
             });
         } else if($(window).width() <  1000 && !triggerMobileVersion) {
             triggerMobileVersion = true;
-            console.log('reinicializing to small');
+            console.log('reinitializing to small');
             $content_datepicker.removeClass('hasDatepicker').empty();
 
             $content_datepicker.datepicker({
