@@ -48,11 +48,11 @@ $( document ).ready(function() {
         if(triggerMobileVersion) {
             $date_in.text($.datepicker.formatDate('dd', startDate));
             $month_short_in.text($.datepicker.formatDate('M', startDate));
-            $day_short_in.text($.datepicker.formatDate('DD', startDate));
+            $day_short_in.text($.datepicker.formatDate('D', startDate));
 
             $date_out.text($.datepicker.formatDate('dd', endDate));
             $month_short_out.text($.datepicker.formatDate('M', endDate));
-            $day_short_out.text($.datepicker.formatDate('DD', endDate));
+            $day_short_out.text($.datepicker.formatDate('D', endDate));
         } else {
             $checkInWeekday.text($.datepicker.formatDate('DD', startDate));
             $checkOutWeekday.text($.datepicker.formatDate('DD', endDate));
