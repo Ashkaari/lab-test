@@ -215,7 +215,7 @@ $( document ).ready(function() {
             }
         };
 
-        if(data.data.kids.amount != 0) {
+        if(data.data.kids.amount) {
             $('.kids_age-list-item option:selected').map(function () {
                 data.data.kids.ages.push(this.value)
             });
