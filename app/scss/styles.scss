@@ -172,6 +172,7 @@ body {
 .content__datepicker {
   display: block;
   width: 541px;
+  left:0;
   padding: 24px 17px;
   position: absolute;
   background-color: white;
@@ -838,6 +839,7 @@ input[type="text"] {
     z-index: 1;
     width: 100%;
     top:80px;
+    padding: 24px 0;
   }
 
   .ui-datepicker-group-last {

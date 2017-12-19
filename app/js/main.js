@@ -3,8 +3,8 @@ $( document ).ready(function() {
         handleResize();
     });
 
-    var mobile = false;
 
+    var triggerMobileVersion =  $(window).width() > 1000 ? true : false;
 
     $content_datepicker =  $('.content__datepicker');
     $input_checkIn      =  $('.datepicker.check-in');
@@ -45,8 +45,7 @@ $( document ).ready(function() {
         '                                    </div>';
 
     function setDate(startDate, endDate) {
-        if(mobile) {
-            console.log('setting mobile dates')
+        if(triggerMobileVersion) {
             $date_in.text($.datepicker.formatDate('dd', startDate));
             $month_short_in.text($.datepicker.formatDate('M', startDate));
             $day_short_in.text($.datepicker.formatDate('DD', startDate));
@@ -70,9 +69,10 @@ $( document ).ready(function() {
     }
 
     function handleResize() {
-
-        if($( window ).width() > 1000) {
+        if($( window ).width() > 1000 && triggerMobileVersion) {
+            triggerMobileVersion = false;
             console.log('reinicializing to big');
+            $content_datepicker.removeClass('hasDatepicker').empty();
 
             $content_datepicker.datepicker({
                 range: 'period',
@@ -82,10 +82,11 @@ $( document ).ready(function() {
                     calcDiff(extensionRange.startDate, extensionRange.endDate);
                 }
             });
-        } else {
-            mobile = true;
-
+        } else if($(window).width() <  1000 && !triggerMobileVersion) {
+            triggerMobileVersion = true;
             console.log('reinicializing to small');
+            $content_datepicker.removeClass('hasDatepicker').empty();
+
             $content_datepicker.datepicker({
                 range: 'period',
                 numberOfMonths: 1,
@@ -95,6 +96,11 @@ $( document ).ready(function() {
                 }
             });
         }
+
+        $content_datepicker.datepicker('setDate', ['+4d', '+8d']);
+        var extensionRange = $content_datepicker.datepicker('widget').data('datepickerExtensionRange');
+        setDate(extensionRange.startDate, extensionRange.endDate);
+        calcDiff(extensionRange.startDate, extensionRange.endDate);
     }
 
     function kidsInputHandler(kids_amount, operation) {
@@ -111,12 +117,6 @@ $( document ).ready(function() {
     }
 
     handleResize();
-
-
-    $content_datepicker.datepicker('setDate', ['+4d', '+8d']);
-    var extensionRange = $content_datepicker.datepicker('widget').data('datepickerExtensionRange');
-    setDate(extensionRange.startDate, extensionRange.endDate);
-    calcDiff(extensionRange.startDate, extensionRange.endDate);
 
 
     $selected_rooms  = $('.counter-fields[data-targ="room"] .counter-field_num');
@@ -219,6 +219,7 @@ $( document ).ready(function() {
             $('.kids_age-list-item option:selected').map(function () {
                 data.data.kids.ages.push(this.value)
             });
+            console.log(data);
         }
 
         $.ajax({
